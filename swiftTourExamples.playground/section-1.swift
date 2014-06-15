@@ -104,7 +104,7 @@ func average (numbers: Int...) -> Int {
 
 average(2, 10)
 
-// Experiment 10: Rewrite closure to return zero for all odd numbers
+// Experiment 9: Rewrite closure to return zero for all odd numbers
 var numbers = [20, 19, 7, 12]
 
 numbers.map({
@@ -117,7 +117,7 @@ numbers.map({
         }
     })
 
-// Experiment 11: Add a constant property with let, and add another method that takes an argument
+// Experiment 10: Add a constant property with let, and add another method that takes an argument
 class Shape {
     var numberOfSides = 0
     let dimension = "2d"
@@ -125,15 +125,15 @@ class Shape {
     func simpleDescription() -> String {
         return "A shape with \(numberOfSides) sides."
     }
-    func notSoSimpleDescription() -> String {
-        return "This is a \(dimension) shape."
+    func notSoSimpleDescription(area:Int) -> String {
+        return "This is a \(dimension) shape with an area of \(area) inches"
     }
 }
 
 let myShape = Shape()
-myShape.notSoSimpleDescription()
+myShape.notSoSimpleDescription(5)
 
-// Experiment 12: Make another subclass of NamedShape called Circle that takes radius and a name as arguments to its initializer. Implement an area and describe method for the Circle class
+// Experiment 11: Make another subclass of NamedShape called Circle that takes radius and a name as arguments to its initializer. Implement an area and describe method for the Circle class
 class NamedShape {
     var numberOfSides: Int = 0
     var name: String
@@ -179,7 +179,7 @@ myCircle.name
 myCircle.area()
 myCircle.describe()
 
-// Experiment 13: Write a function that compares two Rank values by comparing their raw values
+// Experiment 12: Write a function that compares two Rank values by comparing their raw values
 enum Rank: Int {
     case Ace = 1
     case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
@@ -217,7 +217,7 @@ func compare(rank1: Rank, rank2: Rank) -> String {
 
 compare(ace, two)
 
-// Experiment 14: Add a color method to Suit that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
+// Experiment 13: Add a color method to Suit that returns “black” for spades and clubs, and returns “red” for hearts and diamonds.
 enum Suit: Int {
     case Spades = 1
     case Hearts, Diamonds, Clubs
@@ -254,7 +254,7 @@ enum Suit: Int {
 let heartsDescription = Suit.Hearts.simpleDescription()
 let heartsColor = Suit.Hearts.color()
 
-// Experiment 15: Add a method to Card that creates a full deck of cards, with one card of each combination of rank and suit
+// Experiment 14: Add a method to Card that creates a full deck of cards, with one card of each combination of rank and suit
 class Card {
     var rank: Rank
     var suit: Suit
@@ -294,7 +294,7 @@ let threeOfSpadesDescription = threeOfSpades.simpleDescription()
 threeOfSpades.Deck()
 
 
-// Add a third case to the ServerResponse protocol
+// Experiment 15: Add a third case to the ServerResponse protocol
 enum ServerResponse {
     case Result(String, String)
     case Error(String)
