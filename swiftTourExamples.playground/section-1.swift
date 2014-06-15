@@ -1,3 +1,6 @@
+//The Swift Programming Language: Solutions to Experiments
+// June 2014, www.swiftcast.tv
+
 
 // Experiment 1 : Create a constant with an explicit type Float and a value of 4
 let explicitFloat: Float = 4.00
@@ -239,14 +242,10 @@ enum Suit: Int {
 
     func color() -> String {
         switch self {
-        case .Spades:
+        case .Spades, .Clubs:
             return "black"
-        case .Hearts:
+        case .Hearts, .Diamonds:
             return "red"
-        case .Diamonds:
-            return "red"
-        case .Clubs:
-            return "black"
         }
     }
 }
