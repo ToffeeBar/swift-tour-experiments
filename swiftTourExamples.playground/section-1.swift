@@ -372,7 +372,31 @@ func whichCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.E
 
 whichCommonElements([1, 2, 3], [3, 2])
 
+// ...function to make a function...
 
+func funcToGetCommonElements <T, U where T: Sequence, U: Sequence, T.GeneratorType.Element: Equatable, T.GeneratorType.Element == U.GeneratorType.Element> (lhs: T, rhs: U) -> ( () -> [T.GeneratorType.Element] )
+{
+    var commonElements = Array<T.GeneratorType.Element>()
+    for lhsItem in lhs
+    {
+        for rhsItem in rhs
+        {
+            if lhsItem == rhsItem
+            {
+                commonElements += lhsItem
+            }
+        }
+    }
+    
+    func getCommonElements() -> [T.GeneratorType.Element]
+    {
+        return commonElements
+    }
+    return getCommonElements
+}
+
+let aFunc = funcToGetCommonElements([1, 2, 3], [3])
+aFunc()
 
 
 
